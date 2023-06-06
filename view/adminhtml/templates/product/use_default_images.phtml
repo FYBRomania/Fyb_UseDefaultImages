@@ -1,0 +1,47 @@
+<?php
+/**
+ * @author FYB Romania
+ * @copyright Copyright © FYB Romania (https://fyb.ro). All rights reserved.
+ */
+/**
+ * @var $block \Fyb\UseDefaultImages\Block\Adminhtml\Product\DefaultImages
+ */
+
+$storeId = $block->getStoreId();
+?>
+<?php if ($storeId != 0): ?>
+    <?php
+    $isDefault = $block->getIsDefault();
+    ?>
+    <style>
+        .disabled-block {
+            pointer-events: none;
+            opacity: 0.4;
+        }
+    </style>
+
+    <div class="admin__field admin__field-option not-disable">
+        <input type="checkbox" id="use-default-gallery" data-form-part="product_form" value="1"
+               class="admin__control-checkbox"
+               name="use_default[use_default_gallery]" <?= $isDefault ? 'checked' : '' ?>>
+        <label for="use-default-gallery" class="admin__field-label"><?= __('Use Default Images and Video') ?></label>
+    </div>
+    <script type="text/javascript">
+        require(['jquery', 'domReady!'], function ($) {
+            'use strict';
+
+            function disableEnableImages(checked) {
+                console.log('dd');
+                if (checked) {
+                    $('#media_gallery_content, .row', '[data-index="gallery"] fieldset.admin__fieldset').addClass('disabled-block');
+                } else {
+                    $('#media_gallery_content, .row', '[data-index="gallery"] fieldset.admin__fieldset').removeClass('disabled-block');
+                }
+            }
+            $('#use-default-gallery').on('change', function () {
+                disableEnableImages(this.checked);
+            });
+            disableEnableImages(<?= $isDefault ?>);
+        });
+    </script>
+<?php endif; ?>

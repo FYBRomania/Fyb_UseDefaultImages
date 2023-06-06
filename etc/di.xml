@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author FYB Romania
+ * @copyright Copyright © FYB Romania (https://fyb.ro). All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product\Gallery\CreateHandler">
+        <plugin name="Fyb_UseDefaultImages::clear_gallery_values"
+                type="Fyb\UseDefaultImages\Plugin\MediaCreateHandler" sortOrder="99"/>
+    </type>
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="Fyb_UseDefaultImages::product-save"
+                type="Fyb\UseDefaultImages\Plugin\ProductSave"/>
+    </type>
+</config>

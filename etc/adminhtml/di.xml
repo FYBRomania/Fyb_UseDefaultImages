@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author FYB Romania
+ * @copyright Copyright © FYB Romania (https://fyb.ro). All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery" type="Fyb\UseDefaultImages\Block\Adminhtml\Product\Helper\Form\Gallery"/>
+    <type name="Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper">
+        <plugin name="Fyb_UseDefaultImages::default_gallery_set"
+                type="Fyb\UseDefaultImages\Plugin\ProductHelperDefaultGallery"
+                sortOrder="99"/>
+    </type>
+</config>
