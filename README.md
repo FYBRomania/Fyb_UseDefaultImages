@@ -17,7 +17,7 @@ Use composer to install this extension. First make sure that Magento is installe
 
 Next, install our module using the following command:
 
-    composer require fyb/module-use-default-images
+    composer require fyb_romania/module-use-default-images
 
 Next, install the new module plus its dependency `Fyb_UseDefaultImages` into Magento itself:
 
