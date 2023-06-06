@@ -1,5 +1,5 @@
 {
-    "name": "fyb/module-use-default-images",
+    "name": "fyb_romania/module-use-default-images",
     "description": "N/A",
     "type": "magento2-module",
     "license": [
@@ -7,7 +7,7 @@
         "AFL-3.0"
     ],
     "require": {
-        "php": "~7.3.0||~7.4.0",
+        "php": "~7.4.0 || ~8.2.0",
         "magento/framework": "103.0.*",
         "magento/module-catalog": "104.0.*",
         "magento/module-media-gallery": "100.4.*"
